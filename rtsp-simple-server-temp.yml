@@ -1,0 +1,11 @@
+paths:
+  all:
+    runOnDemand: ffmpeg -re -stream_loop -1 -i ./public/WS.mp4 -c copy -f rtsp rtsp://localhost:8554/mystream
+    # Restart the command if it exits suddenly.
+    runOnDemandRestart: yes
+    # Readers will be put on hold until the runOnDemand command starts publishing
+    # or until this amount of time has passed.
+    runOnDemandStartTimeout: 1s
+    # The command will be closed when there are no
+    # readers connected and this amount of time has passed.
+    runOnDemandCloseAfter: 1s

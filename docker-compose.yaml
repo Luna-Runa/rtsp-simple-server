@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  rtsp-simple-server:
+    build: .
+    volumes:
+      - ./public:/public
+    ports:
+      - "8554:8554"
